@@ -1,4 +1,4 @@
-package com.milano.hr_worker;
+package com.milano.hrworker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
