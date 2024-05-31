@@ -12,23 +12,21 @@ import com.milano.hruser.entities.User;
 import com.milano.hruser.repositories.UserRepository;
 
 @RestController
-@RequestMapping(value= "/users")
+@RequestMapping(value = "/users")
 public class UserResource {
-	
-	
+
 	@Autowired
-	private UserRepository respository;
-	
-	@GetMapping(value= "/{id}")
-	public ResponseEntity<User> findById(@PathVariable Long id){
-		
-		User obj = respository.findById(id).get();
+	private UserRepository repository;
+
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<User> findById(@PathVariable Long id) {
+		User obj = repository.findById(id).get();
 		return ResponseEntity.ok(obj);
-	}
-	
-	@GetMapping(value= "/search")
-	public ResponseEntity<User> findByEmail(@RequestParam String email){
-		User obj = respository.findByEmail(email);
+	}	
+
+	@GetMapping(value = "/search")
+	public ResponseEntity<User> findById(@RequestParam String email) {
+		User obj = repository.findByEmail(email);
 		return ResponseEntity.ok(obj);
 	}
 }
